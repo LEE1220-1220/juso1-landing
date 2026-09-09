@@ -1,0 +1,6 @@
+# 주소로 (주소로.com)
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+Sitemap: https://xn--2o2b11og7f.com/sitemap.xml
