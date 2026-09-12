@@ -1,0 +1,7 @@
+# 옛 경로 호환 — 랜딩은 / 로 배포돼 있다
+/landing.html   /   301
+/landing        /   301
+/index          /   301
+# netlify.app 호스트 중복 노출 방지
+https://juso1-landing.netlify.app/*  https://xn--2o2b11og7f.com/:splat  301!
+http://juso1-landing.netlify.app/*   https://xn--2o2b11og7f.com/:splat  301!

@@ -3,4 +3,12 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
+User-agent: Yeti
+Allow: /
+Disallow: /admin.html
+
+User-agent: Daumoa
+Allow: /
+Disallow: /admin.html
+
 Sitemap: https://xn--2o2b11og7f.com/sitemap.xml
