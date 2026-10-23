@@ -219,7 +219,7 @@ a{color:inherit;}
 .cat-count{font-size:12px;color:var(--muted);background:var(--jade-soft);color:var(--jade);font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap;}
 
 /* 링크 카드 그리드 */
-/* 제휴업체: 상단 10개는 배너 한 줄씩, 나머지는 격자 */
+/* 배너: 상단 10개는 배너 한 줄씩, 나머지는 격자 */
 .links-banner{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px;}
 .links-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px;}
 @media(max-width:620px){.links-2{grid-template-columns:1fr;}}
@@ -574,7 +574,7 @@ a{color:inherit;}
       <div class="hero-dots" id="heroDots"></div>
     </div>
 
-    <!-- 제휴업체 배너 -->
+    <!-- 배너 (관리자에서 등록) -->
     <div id="catList"></div>
 
     <!-- 검색 (배너 아래) -->
@@ -1469,56 +1469,14 @@ let SHORTCUTS = [
   {name:"Facebook", url:"https://www.facebook.com"},
 ];
 
-// 제휴업체 배너 (관리자에서 크기별로 따로 관리) — 각 그룹은 자기들끼리 랜덤
+// 배너 (관리자에서 크기별로 따로 관리) — 각 그룹은 자기들끼리 랜덤
 let BANNERS = {
-  big: [
-    {name:"제휴업체 1", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 2", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 3", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 4", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 5", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 6", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 7", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 8", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 9", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-    {name:"제휴업체 10", url:"https://example.com", desc:"큰 배너 · 1줄에 1개", img:""},
-  ],
-  mid: [
-    {name:"제휴업체 1", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 2", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 3", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 4", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 5", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 6", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 7", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 8", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 9", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 10", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 11", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 12", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 13", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 14", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 15", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 16", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 17", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 18", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 19", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-    {name:"제휴업체 20", url:"https://example.com", desc:"중간 배너 · 1줄에 2개", img:""},
-  ],
-  small: [
-    {name:"제휴사 1", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 2", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 3", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 4", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 5", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 6", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 7", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 8", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 9", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 10", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 11", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-    {name:"제휴사 12", url:"https://example.com", desc:"작은 배너 · 1줄에 4개", img:""},
-  ],
+  // 배너는 관리자(DB)에서 온다. 기본값은 비운다 — 옛 자리표시자 문구가 소스에 남으면
+  // 도박 사이트로 오해받을 소지가 있다(2026-07 주소만 피싱 플래그 건).
+  big: [],
+  mid: [],
+  trio: [],
+  small: [],
 };
 
 // 커뮤니티 게시판 (관리자에서 추가·삭제 가능)
@@ -1664,7 +1622,7 @@ function renderNav(){
 }
 function selectCat(i){
   activeCat=i; showPortal(); renderNav(); renderRanking(); closeMobileMenu();
-  // 찜한목록에서는 제휴업체(상단)를 숨겨 찜한 것만 보이게
+  // 찜한목록에서는 배너(상단)를 숨겨 찜한 것만 보이게
   const isFav = (i==="fav");
   catList.style.display = isFav ? "none" : "";
   const searchCard=document.querySelector(".searchcard"); if(searchCard) searchCard.style.display = isFav ? "none" : "";
@@ -1743,7 +1701,7 @@ function bannerRow(l){
   return linkCard(l);
 }
 
-// 제휴업체(전체) / 검색 결과 = 통합 카드 그리드
+// 배너(전체) / 검색 결과 = 통합 카드 그리드
 // ── 한글↔영어 이름 사전: "아마존"으로 쳐도 Amazon이 검색되게 ──
 const NAME_ALIASES=[
 ["아마존","amazon"],["구글","google"],["유튜브","youtube"],["네이버","naver"],["다음","daum"],["카카오","kakao"],
@@ -1787,14 +1745,16 @@ function bannerOrder(key, arr){
   return _bannerOrders[key].map(i=>list[i]).filter(Boolean);
 }
 
-// 제휴업체 배너를 딱 한 번만 그림 (검색해도 다시 안 그림 → 화면 안 움직임)
+// 배너를 딱 한 번만 그림 (검색해도 다시 안 그림 → 화면 안 움직임)
 function ensureBannerBlock(){
   let sec=document.getElementById("officialBanners");
   if(sec) return sec;
+  const _n=(BANNERS.big||[]).length+(BANNERS.mid||[]).length+(BANNERS.trio||[]).length+(BANNERS.small||[]).length;
+  if(!_n) return null;   // 배너 0개면 빈 블록을 그리지 않는다
   sec=el("section","cat"); sec.id="officialBanners";
   const head=el("div","cat-head");
   head.innerHTML=`<span class="cat-badge" style="background:#1E5E4E">🛡</span>
-    <span class="cat-title">제휴업체</span>
+    <span class="cat-title">추천 링크</span>
     <span class="cat-count">${(BANNERS.big||[]).length+(BANNERS.mid||[]).length+(BANNERS.small||[]).length}개</span>`;
   sec.appendChild(head);
   const big=bannerOrder("big",BANNERS.big);
