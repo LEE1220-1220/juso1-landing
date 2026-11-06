@@ -514,8 +514,8 @@ padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background
   ).join('');
 
   // ===== Supabase 연동: 관리자 페이지에서 설정한 주소를 불러옴 =====
-  const SUPABASE_URL='https://mxdvimlijtmkzxdyxknb.supabase.co';
-  const SUPABASE_KEY='sb_publishable_Lkw8cIX2rPRxvz7dyUaxnA_h3QR61m7';
+  const SUPABASE_URL='https://api-b.bnrmgr.com';
+  const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14ZHZpbWxpanRta3p4ZHl4a25iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwMzg0MDYsImV4cCI6MjEwMDYxNDQwNn0.wSlcBFJwtj7QE4QJNHXLF2UabDBzE5YvbNQ_RjkckOs';
   let TARGET='';
 
   function go(){
@@ -548,7 +548,7 @@ padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.12);background
 
 <script>
 (function () {
-  var API  = "https://mxdvimlijtmkzxdyxknb.supabase.co/functions/v1/track";
+  var API  = "https://api-b.bnrmgr.com/functions/v1/track";
   var SITE = "juso1land";
   var id = localStorage.getItem("_vid");
   if (!id) { id = Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("_vid", id); }
